@@ -50,7 +50,7 @@ class HcaCmd:
 
                 if self.aws.is_valid_credentials():
                     # get bucket from local state if set
-                    bucket = get_bucket()
+                    bucket = "covid-utils-ui-88560523"
                     if bucket:
                         self.aws.bucket_name = bucket
                     else:

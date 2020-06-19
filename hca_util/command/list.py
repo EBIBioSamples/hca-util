@@ -1,3 +1,5 @@
+from botocore.config import Config
+
 from hca_util.local_state import get_selected_area
 
 from hca_util.common import print_err
@@ -20,7 +22,7 @@ class CmdList:
                 print('You don\'t have permission to use this command')
                 return
             try:
-                s3_resource = self.aws.common_session.resource('s3')
+                s3_resource = self.aws.common_session.resource('s3', endpoint_url='https://s3.embassy.ebi.ac.uk/', config=Config(s3={'addressing_style': 'path'}))
                 bucket = s3_resource.Bucket(self.aws.bucket_name)
 
                 folder_count = 0
@@ -56,7 +58,7 @@ class CmdList:
             try:
                 selected_area += '' if selected_area.endswith('/') else '/'
 
-                s3_resource = self.aws.common_session.resource('s3')
+                s3_resource = self.aws.common_session.resource('s3', endpoint_url='https://s3.embassy.ebi.ac.uk/', config=Config(s3={'addressing_style': 'path'}))
                 bucket = s3_resource.Bucket(self.aws.bucket_name)
 
                 file_count = 0

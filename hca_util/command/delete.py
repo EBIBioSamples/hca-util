@@ -1,4 +1,6 @@
 import json
+
+from botocore.config import Config
 from botocore.exceptions import ClientError
 from hca_util.local_state import get_selected_area
 from hca_util.common import print_err
@@ -24,7 +26,7 @@ class CmdDelete:
             return
 
         try:
-            s3_resource = self.aws.common_session.resource('s3')
+            s3_resource = self.aws.common_session.resource('s3', endpoint_url='https://s3.embassy.ebi.ac.uk/', config=Config(s3={'addressing_style': 'path'}))
             bucket = s3_resource.Bucket(self.aws.bucket_name)
 
             if self.args.d:  # delete area

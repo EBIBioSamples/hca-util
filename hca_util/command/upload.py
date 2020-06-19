@@ -1,4 +1,7 @@
 import os
+
+from botocore.config import Config
+
 from hca_util.local_state import get_selected_area
 from hca_util.common import print_err
 from hca_util.file_transfer import FileTransfer, TransferProgress, transfer
@@ -66,7 +69,7 @@ class CmdUpload:
                         fs[idx].status = 'File exists. Use -o to overwrite.'
                         fs[idx].complete = True
                     else:
-                        res = sess.resource('s3')
+                        res = sess.resource('s3', endpoint_url='https://s3.embassy.ebi.ac.uk/', config=Config(s3={'addressing_style': 'path'}))
                         # upload_file automatically handles multipart uploads via the S3 Transfer Manager
                         # put_object maps to the low-level S3 API request, it does not handle multipart uploads
                         res.Bucket(self.aws.bucket_name).upload_file(Filename=fname, Key=key,

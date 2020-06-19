@@ -15,7 +15,7 @@ AWS_SECRET_NAME = 'covid/util/secret'
 # default profile uses credentials from [DEFAULT_PROFILE] section of AWS_CREDENTIALS_FILE
 # and config from [profile DEFAULT_PROFILE] section of AWS_CONFIG_FILE
 DEFAULT_PROFILE = 'covid-util'
-DEFAULT_REGION = 'us-east-1'
+DEFAULT_REGION = 'eu-west-2'
 
 # local state for user
 LOCAL_STATE_FILE = USER_HOME + '/.covid-util'
