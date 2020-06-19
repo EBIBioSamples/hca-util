@@ -1,9 +1,9 @@
-import boto3
 import json
 
+import boto3
 from botocore.config import Config
 
-from hca_util.settings import AWS_SECRET_NAME, IAM_USER_CONTRIBUTOR
+from hca_util.settings import AWS_SECRET_NAME
 
 
 class Aws:

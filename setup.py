@@ -15,14 +15,14 @@ INSTALL_REQS = [line.rstrip() for line in open(os.path.join(os.path.dirname(__fi
 setup(
     # dashes are ok in repo and PyPI dist names but not in package (i.e. directory) and
     # module (.py file) names. can't do import xyz-abc
-    name='covid-util',
-    version='0.0.4',
-    description='CLI tool for uploading data to the European COVID-19 data platform',
+    name='covid-util-embassy',
+    version='0.0.1',
+    description='CLI tool for uploading data to the European COVID-19 data platform backed up by Embassy S3',
     long_description=README,
     long_description_content_type='text/markdown',
-    url='https://github.com/ebi-ait/hca-util',
-    author='hca-ingest-dev',
-    author_email='hca-ingest-dev@ebi.ac.uk',
+    url='https://github.com/EBIBioSamples/hca-util',
+    author='biosamples-dev',
+    author_email='biosamples-dev@ebi.ac.uk',
     license='Apache License',
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
