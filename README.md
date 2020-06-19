@@ -1,8 +1,8 @@
 # covid-util
 
-CLI tool for uploading and downloading files from an HCA upload area.
+CLI tool for uploading and downloading files from an Embassy object store upload area.
 
-PyPi: https://pypi.org/project/covid-util/
+PyPi:
 
 # Users
 
@@ -51,14 +51,14 @@ Some commands or options/flags are restricted to authorised users (for e.g. wran
 
 ## `config` command
 
-Configure AWS credentials
+Configure Embassy credentials
 
 ```shell script
 $ covid-util config ACCESS_KEY SECRET_KEY
 
 positional arguments:
-  ACCESS_KEY         AWS Access Key ID
-  SECRET_KEY         AWS Secret Access Key
+  ACCESS_KEY         Embassy Access Key ID
+  SECRET_KEY         Embassy Secret Access Key
 ```
 
 By default, this tool looks for and uses the profile name _covid-util_, if it exists, or it can be set by the `config` command.
