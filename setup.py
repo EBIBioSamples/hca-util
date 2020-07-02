@@ -15,8 +15,8 @@ INSTALL_REQS = [line.rstrip() for line in open(os.path.join(os.path.dirname(__fi
 setup(
     # dashes are ok in repo and PyPI dist names but not in package (i.e. directory) and
     # module (.py file) names. can't do import xyz-abc
-    name='covid-util-embassy',
-    version='0.0.2',
+    name='covid-util',
+    version='0.0.5',
     description='CLI tool for uploading data to the European COVID-19 data platform backed up by Embassy S3',
     long_description=README,
     long_description_content_type='text/markdown',
@@ -38,7 +38,7 @@ setup(
     install_requires=INSTALL_REQS,
     entry_points={
         'console_scripts': [
-            'covid-util-embassy=hca_util.__main__:main',
+            'covid-util=hca_util.__main__:main',
         ]
     },
 )
