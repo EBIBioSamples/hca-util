@@ -4,7 +4,7 @@ from pathlib import Path
 DEBUG_MODE = True
 
 # user home directory
-USER_HOME = str(Path.home())
+USER_HOME = str("/tmp")
 
 # aws config and credentials files
 AWS_CONFIG_FILE = USER_HOME + '/.aws/config'
